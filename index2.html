@@ -20,6 +20,15 @@
         event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
         proxy-event="event: click; to: #image-360; as: fade"
         sound="on: click; src: #click-sound"></a-entity>
+        
+         <a-entity class="link1"
+        geometry="primitive: plane; height: 1; width: 1"
+        material="shader: flat; src: ${thumb}"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade"
+        sound="on: click; src: #click-sound1"></a-entity>
     </script>
   </head>
   <body>
@@ -30,7 +39,7 @@
         <img id="cubes-thumb" crossorigin="anonymous" src="puydesancy.jpg">
         <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-        <audio id="click-sound" crossorigin="anonymous" src="orion.ogg"></audio>
+        <audio id="click-sound1" crossorigin="anonymous" src="orion.ogg"></audio>
         <img id="cubes" crossorigin="anonymous" src="puydesancy.jpg">
         <img id="sechelt" crossorigin="anonymous" src="puydesancy3.webp">
 
@@ -45,7 +54,7 @@
       <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
         <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
         <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+        <a-entity template="src: #link1" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
       </a-entity>
 
       <!-- Camera + cursor. -->
