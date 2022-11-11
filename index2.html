@@ -1,62 +1,122 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>360&deg; Image Gallery</title>
-    <meta name="description" content="360&deg; Image Gallery - A-Frame">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
-    
-    <!-- Image link template to be reused. -->
-    <script id="link" type="text/html">
-      <a-entity class="link"
-        geometry="primitive: plane; height: 1; width: 1"
-        material="shader: flat; src: ${thumb}"
-        event-set__mouseenter="scale: 1.2 1.2 1"
-        event-set__mouseleave="scale: 1 1 1"
-        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
-        proxy-event="event: click; to: #image-360; as: fade"
-        sound="on: click; src: #click-sound"></a-entity>
-    </script>
-  </head>
-  <body>
-    <a-scene>
-      <a-assets>
-        <img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
-        <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-        <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-        <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
-        <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-        <img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
-        <img id="sechelt" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ORION</title>
 
-      </a-assets>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-      <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#city"
-             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
-             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
+</head>
+<body class="black">
+  <!--
+  <nav class="white-text black" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
 
-      <!-- Image links. -->
-      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
-      </a-entity>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+-->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h4 class="header center white-text">Constelacion de <br> Orion</h4>
+       
 
-      <!-- Camera + cursor. -->
-      <a-entity camera look-controls>
-        <a-cursor
-          id="cursor"
-          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-          event-set__mouseenter="_event: mouseenter; color: springgreen"
-          event-set__mouseleave="_event: mouseleave; color: black"
-          raycaster="objects: .link"></a-cursor>
-      </a-entity>
-    </a-scene>
+        <div class="row center">
+         
+          <img class="responsive-img" src="ori.webp">
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background22.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="black white-text container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+
+
+
+<div class="row center">
+            
+            <div class="grid-example col s12 m12">
+             
+              <div class=" center">
+          <h5>Escuela de Suboficiales ARC Barranquilla</h5>
+          <img class="responsive-img" src="escu.webp">
+        </div>
+              <p>                
+               <h6> por: <br> <br> - GTE2 LOPEZ FERNANDEZ EDINSON <br> - GTE2 GALEANO PEREZ JUAN GUILLERMO <br> <br> colaborador: <br> - GT1 CASTRO CORDOBA DANIEL ANDRES (programador de software) </h6>
+              </p>
+            </div>
+
+            <div class="grid-example col s12 m6">
+              <p>
+              <a href="360/360.html" class="btn-large blue ">HISTORIA <i class="Large material-icons">book</i></a>
+              </p>
+            </div>
+ <!--
+            <div class="grid-example col s12 m6">
+              <p>
+              <a href="http://materializecss.com/getting-started.html" class="btn-large blue ">CARACTERISTICAS <i class="Large material-icons">poll</i></a>
+              </p>
+            </div>
+
+            <div class="grid-example col s12 m6">
+              <p>
+              <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large blue ">PARTES <i class="Large material-icons">build</i></a>
+              </p>
+            </div>
+-->
+            <div class="grid-example col s12 m6">
+              <p>
+              <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large blue ">COMO GUIARNOS CON ORION <i class="Large material-icons">assignment</i></a>
+              </p>
+            </div>
+
+          </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Las constelaciones fueron pensadas como consejos, pero nadie las ha entendido.</h5><h6> "La provincia del hombre" (1972), Elias Canetti</h6>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background11.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+
+ 
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
   </body>
 </html>
